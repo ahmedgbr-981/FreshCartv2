@@ -1,4 +1,4 @@
-import { ArrowUpRight, Search, ShoppingCart } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MailBadge, MailBadgeIcon, Search, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/logo";
 import { NavMenu } from "@/components/nav-menu";
@@ -27,9 +27,15 @@ const Navbar = () => {
           <NavMenu className="hidden md:block" />
         </div>
         <div className="flex items-center gap-3">
+         <Link href={'/register'}>
           <Button>
-            Get Started <ArrowUpRight />
+            Sign Up <MailBadge />
+          </Button></Link>
+         <Link href={'/login'}>
+          <Button>
+            Sign In <ArrowRight />
           </Button>
+          </Link>
 
           {/* Mobile Menu */}
           <div className="md:hidden">

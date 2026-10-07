@@ -12,7 +12,7 @@ export default async function ProductDetailsPage({
 }: ProductDetailsPageProps) {
   const { id } = await params;
   const response = await getProductDetails(id);
-  const product: ProductDetailsType | undefined = response?.data;
+  const product: ProductDetailsType = response?.data;
 
   if (!product) {
     notFound();

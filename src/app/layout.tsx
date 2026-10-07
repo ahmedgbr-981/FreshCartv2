@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Raleway, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/navbar";
+import { ToastContainer } from "react-toastify";
 
 const nunitoSansHeading = Nunito_Sans({subsets:['latin'],variable:'--font-heading'});
 
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <Navbar/>
         {children}</body>
+        <ToastContainer />
     </html>
   );
 }
