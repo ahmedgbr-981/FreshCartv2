@@ -1,6 +1,6 @@
-import { registerSchemaType } from "@/lib/schema/auth.schema";
+import { loginSchemaType } from "@/lib/schema/login.schema"
 
-export default async function signIn(data:registerSchemaType) {
+export default async function signIn(data:loginSchemaType) {
     const resp=await fetch(`https://ecommerce.routemisr.com/api/v1/auth/signin`,{
         method:'POST',
         body:JSON.stringify(data),

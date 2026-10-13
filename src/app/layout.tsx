@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/navbar";
 import { ToastContainer } from "react-toastify";
+import AuthProvider from "@/context/authContext";
 
 const nunitoSansHeading = Nunito_Sans({subsets:['latin'],variable:'--font-heading'});
 
@@ -31,8 +32,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", raleway.variable, nunitoSansHeading.variable)}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar/>
-        {children}</body>
+        <AuthProvider>
+          <Navbar />
+          {children}
+        </AuthProvider>
+      </body>
         <ToastContainer />
     </html>
   );
